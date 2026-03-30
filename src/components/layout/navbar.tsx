@@ -1,5 +1,6 @@
 'use client';
 
+import { Linkedin } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -151,7 +152,7 @@ export const Navbar = ({
                       rel="noopener noreferrer"
                       aria-label={link.name}
                     >
-                      {link.icon}
+                      <Linkedin className="h-4 w-4" />
                     </Link>
                   ))}
                 </>

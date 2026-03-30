@@ -1,5 +1,6 @@
 'use client';
 
+import { Linkedin } from 'lucide-react';
 import Link from 'next/link';
 
 import Logo from '@/components/layout/logo';
@@ -10,7 +11,6 @@ const Footer = () => {
     <footer className="border-border border-t">
       <div className="container py-12 md:py-16">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
-          {/* Logo + description */}
           <div className="max-w-sm space-y-4">
             <Logo />
             <p className="text-muted-foreground text-sm">
@@ -18,7 +18,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Navigation */}
           <nav className="flex flex-col gap-3">
             <span className="text-muted-foreground text-xs font-medium uppercase tracking-wider">
               Navigation
@@ -34,7 +33,6 @@ const Footer = () => {
             ))}
           </nav>
 
-          {/* Contact */}
           <div className="flex flex-col gap-3">
             <span className="text-muted-foreground text-xs font-medium uppercase tracking-wider">
               Contact
@@ -51,16 +49,16 @@ const Footer = () => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="animated-underline w-fit text-sm"
+                className="animated-underline flex w-fit items-center gap-2 text-sm"
                 aria-label={link.name}
               >
+                <Linkedin className="h-4 w-4" />
                 {link.name}
               </Link>
             ))}
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="border-border mt-10 flex flex-col items-center justify-between gap-4 border-t pt-6 md:flex-row">
           <p className="text-muted-foreground text-xs">
             © {new Date().getFullYear()} Studio Cran. Tous droits réservés.

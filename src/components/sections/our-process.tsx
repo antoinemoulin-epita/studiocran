@@ -2,37 +2,36 @@ import { Process } from './process';
 
 const processSteps = [
   {
-    title: 'Discovery',
+    title: 'Écoute & cadrage',
     description:
-      'We start by understanding your business, audience, and goals. This foundation ensures every design decision connects to your story.',
-    image: '/images/process/discovery.webp',
+      'On commence par comprendre votre métier, vos outils actuels et ce qui vous freine au quotidien. Pas de jargon, juste des questions concrètes.',
+    image: '/dashboard/01.jpg',
   },
   {
-    title: 'Research & Strategy',
+    title: 'Conception',
     description:
-      'We explore your industry, competitors, and trends to define a creative direction that sets your brand apart.',
-    image: '/images/process/research.webp',
+      "On dessine l'outil avec vous : écrans clés, parcours utilisateur, connexions avec vos outils existants. Vous validez avant qu'on code quoi que ce soit.",
+    image: '/dashboard/02.jpg',
   },
   {
-    title: 'Concept Design',
+    title: 'Développement',
     description:
-      'Our team creates multiple design directions — from logos to icon systems — each shaped to fit your needs and brand personality.',
-    image: '/images/process/concept.webp',
+      "On construit en sprints courts. Vous voyez l'avancement chaque semaine et vous pouvez ajuster en cours de route.",
+    image: '/dashboard/03.jpg',
   },
   {
-    title: 'Refinement',
+    title: 'Livraison & formation',
     description:
-      "We collaborate with you to refine the chosen concept, polishing details like color, typography, and balance until it's perfect.",
-    image: '/images/process/refinement.webp',
+      "On déploie, on forme votre équipe, on s'assure que tout fonctionne. Pas de surprise le jour J.",
+    image: '/dashboard/04.jpg',
   },
   {
-    title: 'Delivery',
+    title: 'Évolution continue',
     description:
-      'You receive all final assets — logos, icons, guidelines, or identity kits — packaged in professional formats ready for web, print, and beyond.',
-    image: '/images/process/delivery.webp',
+      'Votre outil grandit avec vous. Nouvelles fonctionnalités, automatisations supplémentaires, support réactif — on reste à vos côtés.',
   },
 ];
 
 export const OurProcess = () => {
-  return <Process title="Our process" steps={processSteps} />;
+  return <Process title="Notre méthode" steps={processSteps} />;
 };

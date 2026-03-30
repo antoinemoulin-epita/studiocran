@@ -100,7 +100,7 @@ export const Process = ({ title, steps }: ProcessProps) => {
         ref={containerRef}
         className="section-padding relative container grid gap-16 md:grid-cols-2"
       >
-        <h2 className="top-6 self-start text-4xl md:sticky">{title}</h2>
+        <h2 className="font-display top-6 self-start text-4xl font-semibold tracking-tight md:sticky">{title}</h2>
 
         <div ref={stepsContainerRef} className="divide-y">
           {steps.map((step, index) => (

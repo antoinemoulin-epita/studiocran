@@ -1,3 +1,4 @@
+import { ArrowLeft } from 'lucide-react';
 import type { Metadata } from 'next';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import Image from 'next/image';
@@ -50,6 +51,15 @@ export default async function RealisationPage({ params }: PageProps) {
   return (
     <div className="hero-padding">
       <div className="container max-w-4xl space-y-12">
+        {/* Back link */}
+        <Link
+          href="/realisations"
+          className="animated-underline text-muted-foreground inline-flex items-center gap-2 text-sm"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Retour aux réalisations
+        </Link>
+
         {/* Header */}
         <div className="space-y-6">
           <div className="flex items-center gap-3">

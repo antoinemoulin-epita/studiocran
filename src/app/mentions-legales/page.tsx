@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Mentions légales',
+  description: 'Mentions légales du site Studio Cran — éditeur, hébergement, données personnelles, cookies.',
 };
 
 export default function MentionsLegales() {
