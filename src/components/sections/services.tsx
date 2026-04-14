@@ -19,7 +19,6 @@ const services = [
     title: 'Logiciel sur mesure',
     description:
       "Un outil pensé pour votre métier, pas un logiciel générique. Interface intuitive, connecté à ce que vous utilisez déjà. On part de votre process, on construit l'outil qui le remplace.",
-    price: 'À partir de 5 000 €',
     tags: ['Application web', 'Dashboard', 'Outil interne', 'Intégration API'],
     image: { src: '/images/projects/project-1/1.webp', alt: 'Dashboard sur mesure' },
   },
@@ -27,7 +26,6 @@ const services = [
     title: 'Automatisation IA',
     description:
       "On automatise ce que vous faites à la main. Relances clients, traitement de données, rédaction — moins d'erreurs, plus de temps pour votre vrai métier.",
-    price: 'Inclus ou en complément',
     tags: ['IA générative', 'Relances auto', 'Traitement de données', 'Chatbot'],
     image: { src: '/images/projects/project-2/1.webp', alt: 'Interface automatisation IA' },
   },
@@ -35,7 +33,6 @@ const services = [
     title: 'Évolution & support',
     description:
       "Votre outil grandit avec votre entreprise. Mises à jour, nouvelles fonctionnalités, automatisations supplémentaires. On reste à vos côtés après la livraison.",
-    price: 'Abonnement mensuel',
     tags: ['Maintenance', 'Nouvelles features', 'Support réactif', 'Monitoring'],
     image: { src: '/images/projects/project-3/1.webp', alt: 'Évolution et suivi' },
   },
@@ -103,7 +100,6 @@ export const Services = () => {
                           </Badge>
                         ))}
                       </div>
-                      <p className="text-sm font-medium">{service.price}</p>
                     </div>
                   </div>
 

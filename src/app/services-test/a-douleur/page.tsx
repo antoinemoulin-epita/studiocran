@@ -94,7 +94,7 @@ const pains = [
 const faq = [
   {
     q: 'Combien ça coûte ?',
-    a: "À partir de 8 000 € pour un outil sur mesure livré clé en main. La fourchette dépend du périmètre et du niveau d'intégration. On vous donne un devis ferme après un premier appel de cadrage gratuit.",
+    a: "Le tarif dépend entièrement du périmètre — il n'y a pas de grille publique. On établit un devis ferme après un premier appel de cadrage gratuit où on comprend vraiment votre besoin. Pas de surprise en cours de route.",
   },
   {
     q: 'Combien de temps pour livrer ?',

@@ -95,7 +95,7 @@ const proofs = [
 const faq = [
   {
     q: 'Combien ça coûte ?',
-    a: "À partir de 8 000 € pour une première version utilisable en production. On donne un devis ferme après un appel de cadrage gratuit — pas de surprise en cours de route.",
+    a: "Le tarif dépend entièrement du périmètre — il n'y a pas de grille publique. On établit un devis ferme après un appel de cadrage gratuit où on comprend vraiment votre besoin. Pas de surprise en cours de route.",
   },
   {
     q: 'Combien de temps pour livrer ?',
@@ -120,7 +120,7 @@ const faq = [
 ];
 
 const promises = [
-  'À partir de 8 000 €, devis ferme',
+  'Devis ferme après un appel gratuit',
   '6 à 10 semaines pour la première version',
   'Code livré, données chez vous',
   'Réponse sous 48h, toujours',

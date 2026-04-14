@@ -36,9 +36,9 @@ const notIncludes = [
 const addons = [
   {
     name: 'Automatisation & IA',
-    price: 'À partir de 3 000 €',
+    tagline: 'En complément de l’offre principale',
     description:
-      "En complément de l'offre principale, on ajoute des automatisations ciblées : relances, génération de documents, extraction ou enrichissement de données, assistance IA.",
+      "On ajoute des automatisations ciblées : relances, génération de documents, extraction ou enrichissement de données, assistance IA. Devisé selon le nombre et la complexité des workflows.",
     bullets: [
       'Audit des tâches automatisables',
       'Workflows ou agents IA adaptés',
@@ -47,9 +47,9 @@ const addons = [
   },
   {
     name: 'Support mensuel',
-    price: '500 €/mois',
+    tagline: 'En abonnement après livraison',
     description:
-      "Après la livraison, on reste à vos côtés : corrections, petites évolutions, monitoring et réponse sous 48h garantie. Résiliable à tout moment.",
+      "Après la livraison, on reste à vos côtés : corrections, petites évolutions, monitoring et réponse sous 48h garantie. Résiliable à tout moment, tarif forfaitaire discuté en appel.",
     bullets: [
       'Corrections illimitées',
       'Jusqu’à 2 petites évolutions par mois',
@@ -60,16 +60,16 @@ const addons = [
 
 const faq = [
   {
-    q: 'Pourquoi un prix unique ?',
-    a: "Parce qu'on fait essentiellement la même chose à chaque projet : comprendre votre métier, concevoir, développer, livrer, former. Le périmètre varie, pas l'offre. Afficher un prix unique, c'est s'engager publiquement.",
+    q: 'Pourquoi pas de prix public ?',
+    a: "Parce qu'un outil sur mesure, par définition, ne se vend pas au kilo. Le tarif dépend du périmètre, des intégrations, du niveau de qualité attendu et de votre contexte. Afficher une grille fermée serait malhonnête — on préfère un devis ferme après un appel où on comprend vraiment votre besoin.",
   },
   {
-    q: 'Et si mon projet est plus gros que 8 000 € ?',
-    a: "8 000 € est le plancher pour un outil simple. Un projet plus ambitieux (produit SaaS complet, intégrations complexes, équipe de 50+) se devise au-delà. On reste transparent dès le premier appel.",
+    q: 'Comment se passe le devis ?',
+    a: "Un appel de cadrage gratuit de 30 minutes. On parle de votre activité, de vos outils actuels, de ce qui vous freine. On revient ensuite sous 48h avec un périmètre clair, un calendrier et un tarif ferme — pas de régularisations en cours de route.",
   },
   {
-    q: 'Que comprend exactement le tarif ?',
-    a: "Toutes les étapes listées dans 'Ce qui est inclus'. Le support mensuel est optionnel et tarifé à part. Les intégrations non standards et les refontes graphiques sont devisées séparément.",
+    q: 'Que comprend l’offre ?',
+    a: "Toutes les étapes listées dans 'Ce qui est inclus' — écoute, conception, développement, intégrations, tests, déploiement, formation. Le support mensuel est optionnel et discuté séparément.",
   },
   {
     q: 'Puis-je commencer par un périmètre plus petit ?',
@@ -106,9 +106,10 @@ export default function VariantD() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mx-auto max-w-2xl text-lg leading-relaxed text-[#BFD5FF]/60">
-                Pas trois packs, pas de « sur devis ». Un prix de départ
-                public, un périmètre clair, un délai engageant. Deux options
-                si votre besoin le demande — et c’est tout.
+                Pas trois packs alambiqués. Une seule offre, un périmètre
+                clair, un délai engageant. Deux options si votre besoin le
+                demande — et c’est tout. Le tarif se discute en appel, parce
+                que chaque projet est différent.
               </p>
             </Reveal>
           </div>
@@ -141,15 +142,17 @@ export default function VariantD() {
                       existants, livré prêt à être utilisé en production.
                     </p>
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-2">
                     <p className="text-muted-foreground text-sm uppercase tracking-wider">
-                      À partir de
+                      Tarif
                     </p>
-                    <p className="font-display bg-gradient-to-br from-primary via-[#2F41FC] to-[#4F6CFF] bg-clip-text text-6xl font-semibold tracking-tight text-transparent md:text-7xl">
-                      8 000 €
+                    <p className="font-display bg-gradient-to-br from-primary via-[#2F41FC] to-[#4F6CFF] bg-clip-text text-5xl font-semibold tracking-tight text-transparent md:text-6xl">
+                      Sur devis
                     </p>
-                    <p className="text-muted-foreground text-sm">
-                      Devis ferme après un appel de cadrage gratuit
+                    <p className="text-muted-foreground max-w-sm text-sm leading-relaxed">
+                      Établi après un appel gratuit de 30 minutes. Ferme, sans
+                      régularisation en cours de route, et aligné sur un
+                      périmètre écrit noir sur blanc.
                     </p>
                   </div>
                   <div className="grid gap-3 sm:grid-cols-2">
@@ -244,8 +247,8 @@ export default function VariantD() {
                   <div className="bg-primary/10 text-primary flex h-12 w-12 items-center justify-center rounded-xl transition-transform group-hover:scale-110">
                     <Plus className="h-5 w-5" />
                   </div>
-                  <p className="font-display text-lg font-semibold">
-                    {addon.price}
+                  <p className="text-muted-foreground text-xs font-semibold uppercase tracking-wider">
+                    {addon.tagline}
                   </p>
                 </div>
                 <div>

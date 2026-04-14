@@ -4,9 +4,9 @@ import {
   ArrowRight,
   Check,
   Clock,
-  Euro,
   RotateCcw,
   Sparkles,
+  Target,
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
@@ -63,27 +63,21 @@ const urgencyOptions: { value: Urgency; label: string; hint: string }[] = [
 function computeResult(answers: Answers) {
   if (!answers.size || !answers.need || !answers.urgency) return null;
 
-  const basePrice: Record<Need, [number, number]> = {
-    'internal-tool': [8000, 18000],
-    'saas-product': [15000, 35000],
-    automation: [5000, 12000],
-  };
-  const sizeMultiplier: Record<Size, number> = {
-    small: 1,
-    medium: 1.2,
-    large: 1.5,
-  };
   const baseDuration: Record<Need, [number, number]> = {
     'internal-tool': [6, 10],
     'saas-product': [8, 14],
     automation: [3, 6],
   };
+  const sizeMultiplier: Record<Size, number> = {
+    small: 1,
+    medium: 1.1,
+    large: 1.3,
+  };
 
-  const [minP, maxP] = basePrice[answers.need];
-  const mult = sizeMultiplier[answers.size];
-  const priceMin = Math.round((minP * mult) / 500) * 500;
-  const priceMax = Math.round((maxP * mult) / 500) * 500;
   const [durMin, durMax] = baseDuration[answers.need];
+  const mult = sizeMultiplier[answers.size];
+  const adjustedMin = Math.round(durMin * mult);
+  const adjustedMax = Math.round(durMax * mult);
 
   const recommendation: Record<Need, string> = {
     'internal-tool':
@@ -92,6 +86,15 @@ function computeResult(answers: Answers) {
       "Produit SaaS clé en main — conception, développement et première version utilisable pour vos clients.",
     automation:
       "Automatisation ciblée — on identifie les bons leviers et on construit les workflows, avec de l'IA si besoin.",
+  };
+
+  const scopeNote: Record<Need, string> = {
+    'internal-tool':
+      "Écoute métier, conception des écrans clés, développement des parcours principaux et intégration avec vos outils existants.",
+    'saas-product':
+      "Conception produit, développement du premier cœur fonctionnel, déploiement et première itération avec de vrais utilisateurs.",
+    automation:
+      "Audit des tâches répétitives, construction des workflows, garde-fous humains et mise en production.",
   };
 
   const urgencyNote: Record<Urgency, string> = {
@@ -104,11 +107,10 @@ function computeResult(answers: Answers) {
   };
 
   return {
-    priceMin,
-    priceMax,
-    durMin,
-    durMax,
+    durMin: adjustedMin,
+    durMax: adjustedMax,
     title: recommendation[answers.need],
+    scope: scopeNote[answers.need],
     note: urgencyNote[answers.urgency],
   };
 }
@@ -116,7 +118,7 @@ function computeResult(answers: Answers) {
 const reassurances = [
   {
     title: 'Devis ferme après un appel',
-    body: 'La fourchette ci-dessus est une estimation honnête. Le devis réel est ferme, établi après un appel gratuit de 30 minutes.',
+    body: "L'estimation ci-dessus porte sur le délai et le périmètre. Le tarif est calculé à part, après un appel gratuit de 30 minutes où on comprend vraiment votre besoin.",
   },
   {
     title: 'Code et données chez vous',
@@ -135,15 +137,15 @@ const reassurances = [
 const miniFaq = [
   {
     q: 'L’estimation est-elle engageante ?',
-    a: 'Non. C’est une fourchette indicative basée sur des projets similaires. Le devis ferme vient après un premier appel.',
+    a: 'Non. C’est une indication de délai et de périmètre basée sur des projets similaires. Rien n’est contractuel tant qu’on ne s’est pas parlé.',
   },
   {
-    q: 'Pourquoi cet écart entre minimum et maximum ?',
-    a: "Parce qu'on ne sait pas encore tout. Le chiffre bas correspond à un périmètre minimal et clair. Le chiffre haut couvre les intégrations, les cas particuliers et les évolutions du cahier des charges.",
+    q: 'Pourquoi pas de prix affiché ?',
+    a: "Parce que le tarif dépend vraiment du périmètre, du niveau d'intégration et du contexte de votre équipe. Afficher une fourchette serait malhonnête — on préfère un devis ferme après un appel de 30 minutes gratuit.",
   },
   {
-    q: 'Que couvre le prix estimé ?',
-    a: 'La conception, le développement, les intégrations, les tests et le déploiement. Le support mensuel après livraison est un forfait séparé.',
+    q: 'Comment se passe l’appel de cadrage ?',
+    a: 'On échange 30 minutes en visio : vos enjeux, vos outils actuels, ce qui vous freine. À la fin, on sait si on peut vous aider — et si oui, on revient vers vous sous 48h avec un devis ferme et un calendrier.',
   },
 ];
 
@@ -182,9 +184,6 @@ export const Simulator = () => {
 
   const result = computeResult(answers);
   const reset = () => setAnswers({ size: null, need: null, urgency: null });
-
-  const formatPrice = (n: number) =>
-    n.toLocaleString('fr-FR').replace(/,/g, ' ');
 
   return (
     <>
@@ -351,18 +350,6 @@ export const Simulator = () => {
                       <div className="relative mt-8 grid gap-6 sm:grid-cols-2">
                         <div className="rounded-xl border border-white/10 bg-white/5 p-5">
                           <div className="flex items-center gap-3">
-                            <Euro className="h-5 w-5 text-[#BFD5FF]/70" />
-                            <p className="text-xs uppercase tracking-wider text-[#BFD5FF]/60">
-                              Fourchette indicative
-                            </p>
-                          </div>
-                          <p className="font-display mt-2 text-2xl font-semibold md:text-3xl">
-                            {formatPrice(result.priceMin)} –{' '}
-                            {formatPrice(result.priceMax)} €
-                          </p>
-                        </div>
-                        <div className="rounded-xl border border-white/10 bg-white/5 p-5">
-                          <div className="flex items-center gap-3">
                             <Clock className="h-5 w-5 text-[#BFD5FF]/70" />
                             <p className="text-xs uppercase tracking-wider text-[#BFD5FF]/60">
                               Délai estimé
@@ -372,10 +359,32 @@ export const Simulator = () => {
                             {result.durMin} à {result.durMax} semaines
                           </p>
                         </div>
+                        <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+                          <div className="flex items-center gap-3">
+                            <Target className="h-5 w-5 text-[#BFD5FF]/70" />
+                            <p className="text-xs uppercase tracking-wider text-[#BFD5FF]/60">
+                              Périmètre recommandé
+                            </p>
+                          </div>
+                          <p className="mt-2 text-sm leading-relaxed text-[#BFD5FF]/90">
+                            {result.scope}
+                          </p>
+                        </div>
                       </div>
                       <p className="relative mt-6 border-t border-white/10 pt-6 text-sm leading-relaxed text-[#BFD5FF]/80">
                         {result.note}
                       </p>
+                      <div className="relative mt-6 rounded-xl border border-white/10 bg-white/5 p-5">
+                        <p className="text-xs uppercase tracking-wider text-[#BFD5FF]/60">
+                          Et le tarif ?
+                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-[#BFD5FF]/90">
+                          On l’établit après un appel gratuit de 30 minutes,
+                          où on comprend vraiment votre contexte. Chaque
+                          projet est différent — on préfère un devis ferme à
+                          une grille qui ment.
+                        </p>
+                      </div>
                       <div className="relative mt-6">
                         <Button
                           size="lg"
@@ -383,7 +392,7 @@ export const Simulator = () => {
                           asChild
                         >
                           <Link href="/contact">
-                            Valider cette estimation en 30 min
+                            Réserver l’appel de cadrage
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </Link>
                         </Button>
