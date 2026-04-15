@@ -26,9 +26,8 @@ export const Testimonials = () => {
             Ce qu&apos;en disent nos clients
           </h2>
           <p className="text-muted-foreground text-lg">
-            Des fondateurs qui nous ont confié leur produit ou leur outil
-            interne, et qui repartent avec quelque chose qu&apos;ils peuvent
-            montrer.
+            Des fondateurs de PME qui étaient dans la même situation que
+            vous — tableurs, process manuels, outils qui ne se parlent pas.
           </p>
         </div>
 

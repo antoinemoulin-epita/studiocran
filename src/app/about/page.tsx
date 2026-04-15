@@ -1,23 +1,24 @@
 import type { Metadata } from 'next';
-import { ExternalLink, Linkedin } from 'lucide-react';
+import { ArrowRight, ExternalLink, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { Process } from '@/components/sections/process';
+import { Reveal } from '@/components/sections/reveal';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Le Studio',
   description:
-    "Découvrez qui se cache derrière Studio Cran — deux étudiants d'EPITA qui construisent des outils sur mesure pour les PME.",
+    'Studio Cran, c\u2019est deux développeurs qui construisent des outils sur mesure pour les ateliers d\u2019enseigne et de signalétique.',
 };
 
 const founders = [
   {
     name: 'Antoine Moulin',
-    role: 'Front-end, Design & Communication',
-    bio: 'Passionné par les interfaces qui ont du sens. Antoine conçoit des outils que vos équipes adoptent dès le premier jour — clairs, rapides, agréables à utiliser. Il gère aussi la relation client de A à Z.',
+    role: 'Front-end, Design & Relation client',
+    bio: 'Antoine conçoit des interfaces claires, que votre chef d\u2019atelier et vos poseurs adoptent dès le premier jour. Il gère la relation client de A à Z et s\u2019assure que l\u2019outil colle à votre réalité.',
     image: {
       src: '/people/antoinemoulin.png',
       alt: 'Antoine Moulin',
@@ -28,9 +29,9 @@ const founders = [
   {
     name: 'David Mvoula',
     role: 'Back-end, Architecture & IA',
-    bio: "David construit ce qu'on ne voit pas mais qui fait tout fonctionner : bases de données, API, intégrations, automatisations IA. Il s'assure que votre outil est solide, rapide et évolutif.",
+    bio: 'David construit ce qu\u2019on ne voit pas mais qui fait tout fonctionner : bases de données, connexions entre vos outils, automatisations. Il s\u2019assure que votre outil est solide, rapide et évolutif.',
     image: {
-      src: '/people/antoinemoulin.png',
+      src: '/people/davidmvoula.jpeg',
       alt: 'David Mvoula',
       className: '',
     },
@@ -40,19 +41,19 @@ const founders = [
 
 const values = [
   {
-    title: 'Clarté',
+    title: 'Simplicité',
     description:
-      "On vous explique tout. Pas de jargon, pas de zone grise. Vous savez exactement ce qu'on fait, pourquoi, et combien ça coûte.",
+      'Votre chef d\u2019atelier doit pouvoir s\u2019en servir. Si c\u2019est compliqué, c\u2019est qu\u2019on a mal fait notre travail.',
   },
   {
-    title: 'Efficacité',
+    title: 'Vos données vous appartiennent',
     description:
-      'On ne fait pas de réunions inutiles. On avance vite, on livre en semaines — pas en mois.',
+      'Export à tout moment. CSV, PDF, ce que vous voulez. On ne vous enferme dans rien.',
   },
   {
-    title: 'Responsabilité',
+    title: 'Zéro intermédiaire',
     description:
-      "On ne disparaît pas après la livraison. Votre outil évolue, et on reste là pour l'accompagner.",
+      'Vous parlez directement aux gens qui codent votre outil. Pas de chef de projet, pas de couche en plus.',
   },
 ];
 
@@ -63,9 +64,8 @@ export default function AboutPage() {
       <section className="hero-padding space-y-18 md:space-y-20 lg:space-y-26">
         <div className="container text-center">
           <h1 className="font-display mx-auto max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl">
-            On pense que les PME méritent des outils{' '}
-            <span className="text-[#4F6CFF]">aussi bons</span> que ceux des
-            startups tech.
+            On comprend votre métier.{' '}
+            <span className="text-[#4F6CFF]">On construit votre outil.</span>
           </h1>
         </div>
 
@@ -86,26 +86,27 @@ export default function AboutPage() {
       {/* Notre histoire */}
       <section className="section-padding container grid gap-10 md:grid-cols-2">
         <h2 className="font-display text-4xl font-semibold tracking-tight">
-          Notre histoire
+          Pourquoi les enseignistes
         </h2>
         <div className="text-muted-foreground space-y-8 text-lg md:space-y-10">
           <p>
-            On est partis d&apos;un constat simple : beaucoup de PME
-            fonctionnent encore avec des tableurs bricolés, des logiciels
-            génériques qui ne collent pas à leur métier, ou des process manuels
-            qui font perdre un temps fou.
+            La plupart des ateliers d&apos;enseigne fonctionnent avec Excel, des
+            pochettes papier et des coups de fil. Les logiciels du marché sont
+            soit trop génériques, soit trop lourds, soit pas adaptés à un
+            atelier de 8 à 15 personnes.
           </p>
           <p>
-            Pendant ce temps, les startups tech ont des outils sur mesure,
-            connectés, automatisés. On s&apos;est dit : pourquoi les PME
-            n&apos;auraient pas droit à la même chose ?
+            On a passé des heures à étudier le quotidien des enseignistes — du
+            devis à la pose, en passant par le BAT, l&apos;atelier et la
+            facturation. On sait où l&apos;info se perd, où les erreurs coûtent
+            cher, et où les heures partent sans que personne ne s&apos;en rende
+            compte.
           </p>
           <p>
-            Studio Cran est né de cette idée. On conçoit des logiciels sur
-            mesure pour les PME françaises — connectés à leurs outils existants,
-            automatisés par l&apos;IA, livrés en quelques semaines. Pas une
-            agence avec 50 personnes et des mois de délai. Juste nous deux, qui
-            faisons le travail.
+            Studio Cran construit des outils sur mesure pour les ateliers
+            d&apos;enseigne et de signalétique. Pas un ERP à 30 000 €. Pas un
+            CRM générique. Un outil qui épouse votre façon de travailler, livré
+            en quelques semaines, et qui évolue avec vous.
           </p>
         </div>
       </section>
@@ -118,7 +119,7 @@ export default function AboutPage() {
 
         <div className="grid gap-x-6 gap-y-12 md:grid-cols-2">
           {founders.map((founder) => (
-            <div key={founder.name} className="group flex flex-col gap-5">
+            <Reveal key={founder.name} as="div" className="group flex flex-col gap-5">
               <div className="relative h-[335px] w-full overflow-hidden sm:h-[392px] lg:h-[425px]">
                 <Image
                   src={founder.image.src}
@@ -152,7 +153,7 @@ export default function AboutPage() {
                   <ExternalLink className="h-3 w-3" />
                 </Link>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -160,7 +161,7 @@ export default function AboutPage() {
       {/* Nos valeurs */}
       <Process title="Ce qu'on défend" steps={values} />
 
-      {/* Notre mission */}
+      {/* Notre engagement */}
       <section className="section-padding">
         <div className="container">
           <div className="relative overflow-hidden rounded-2xl bg-[#141952] px-8 py-16 text-white md:px-16 md:py-20">
@@ -170,20 +171,22 @@ export default function AboutPage() {
             </div>
             <div className="relative z-10 mx-auto max-w-2xl space-y-8 text-center">
               <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">
-                Notre mission
+                Notre engagement
               </h2>
               <p className="text-lg leading-relaxed text-[#99B9FF]/80">
-                Donner aux PME françaises les outils que seules les startups
-                tech pouvaient s&apos;offrir. Un logiciel qui épouse votre
-                métier, qui automatise ce qui peut l&apos;être, et qui évolue
-                avec vous. Pas plus, pas moins.
+                Construire pour votre atelier un outil qui vous fait gagner du
+                temps dès la première semaine. Un outil simple, qui grandit avec
+                vous, et qui vous appartient. Pas plus, pas moins.
               </p>
               <Button
                 size="lg"
                 asChild
                 className="bg-[#2F41FC] text-white hover:bg-[#202DDB]"
               >
-                <Link href="/contact">Discutons de votre projet</Link>
+                <Link href="/contact">
+                  Discutons de votre atelier
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </div>

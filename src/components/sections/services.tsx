@@ -20,21 +20,21 @@ const services = [
     description:
       "Un outil pensé pour votre métier, pas un logiciel générique. Interface intuitive, connecté à ce que vous utilisez déjà. On part de votre process, on construit l'outil qui le remplace.",
     tags: ['Application web', 'Dashboard', 'Outil interne', 'Intégration API'],
-    image: { src: '/images/projects/project-1/1.webp', alt: 'Dashboard sur mesure' },
+    image: { src: '/dashboard/01.jpg', alt: 'Interface logiciel sur mesure' },
   },
   {
     title: 'Automatisation IA',
     description:
       "On automatise ce que vous faites à la main. Relances clients, traitement de données, rédaction — moins d'erreurs, plus de temps pour votre vrai métier.",
     tags: ['IA générative', 'Relances auto', 'Traitement de données', 'Chatbot'],
-    image: { src: '/images/projects/project-2/1.webp', alt: 'Interface automatisation IA' },
+    image: { src: '/dashboard/02.jpg', alt: 'Interface automatisation IA' },
   },
   {
     title: 'Évolution & support',
     description:
       "Votre outil grandit avec votre entreprise. Mises à jour, nouvelles fonctionnalités, automatisations supplémentaires. On reste à vos côtés après la livraison.",
     tags: ['Maintenance', 'Nouvelles features', 'Support réactif', 'Monitoring'],
-    image: { src: '/images/projects/project-3/1.webp', alt: 'Évolution et suivi' },
+    image: { src: '/dashboard/03.jpg', alt: 'Suivi et évolution continue' },
   },
 ];
 

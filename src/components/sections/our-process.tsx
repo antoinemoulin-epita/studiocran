@@ -4,25 +4,25 @@ const processSteps = [
   {
     title: 'Écoute & cadrage',
     description:
-      'On commence par comprendre votre métier, vos outils actuels et ce qui vous freine au quotidien. Pas de jargon, juste des questions concrètes.',
+      'On vient dans votre atelier. On regarde comment circule un dossier du devis à la pose. On identifie ce qui vous coûte du temps et de l\u2019argent.',
     image: '/dashboard/01.jpg',
   },
   {
     title: 'Conception',
     description:
-      "On dessine l'outil avec vous : écrans clés, parcours utilisateur, connexions avec vos outils existants. Vous validez avant qu'on code quoi que ce soit.",
+      'On dessine l\u2019outil avec vous : écrans clés, parcours utilisateur, connexions avec vos outils existants. Vous validez avant qu\u2019on code quoi que ce soit.',
     image: '/dashboard/02.jpg',
   },
   {
     title: 'Développement',
     description:
-      "On construit en sprints courts. Vous voyez l'avancement chaque semaine et vous pouvez ajuster en cours de route.",
+      'On construit en cycles courts. Vous voyez l\u2019avancement chaque semaine et vous pouvez ajuster en cours de route.',
     image: '/dashboard/03.jpg',
   },
   {
     title: 'Livraison & formation',
     description:
-      "On déploie, on forme votre équipe, on s'assure que tout fonctionne. Pas de surprise le jour J.",
+      'On déploie, on forme votre équipe — y compris le chef d\u2019atelier et les poseurs. Pas de manuel de 50 pages : une demi-journée suffit.',
     image: '/dashboard/04.jpg',
   },
   {
@@ -33,5 +33,9 @@ const processSteps = [
 ];
 
 export const OurProcess = () => {
-  return <Process title="Notre méthode" steps={processSteps} />;
+  return (
+    <div id="comment-ca-marche">
+      <Process title="Notre méthode" steps={processSteps} />
+    </div>
+  );
 };

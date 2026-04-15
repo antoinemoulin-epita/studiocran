@@ -28,7 +28,7 @@ const services = [
     description:
       "Un outil pensé pour votre métier, pas un logiciel générique. Interface intuitive, connecté à ce que vous utilisez déjà. On part de votre process, on construit l'outil qui le remplace.",
     tags: ['Application web', 'Dashboard', 'Outil interne', 'Intégration API'],
-    image: '/images/projects/project-1/1.webp',
+    image: '/dashboard/01.jpg',
     example: {
       label: 'Exemple concret',
       text: 'Top Loisirs — site refait et logiciel interne qui remplace Excel, emails et classeurs papier.',
@@ -46,7 +46,7 @@ const services = [
       'Traitement de données',
       'Workflows',
     ],
-    image: '/images/projects/project-2/1.webp',
+    image: '/dashboard/02.jpg',
     example: {
       label: 'Exemple concret',
       text: 'Relances prospects automatiques, génération de rapports, extraction de données — gardés sous supervision humaine.',
@@ -64,7 +64,7 @@ const services = [
       'Support sous 48h',
       'Monitoring',
     ],
-    image: '/images/projects/project-3/1.webp',
+    image: '/dashboard/03.jpg',
     example: {
       label: 'Engagement concret',
       text: 'Un interlocuteur direct, une réponse sous 48h garantie, et un outil qui reste aligné avec votre activité.',

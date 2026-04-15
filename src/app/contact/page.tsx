@@ -82,7 +82,7 @@ export default function ContactPage() {
         {/* Header */}
         <div className="mx-auto max-w-2xl space-y-4 text-center">
           <h1 className="font-display text-4xl font-semibold tracking-tight md:text-5xl">
-            Parlons de votre projet
+            Parlons de votre atelier
           </h1>
           <p className="text-muted-foreground text-lg">
             Choisissez ce qui vous convient le mieux. On vous répond sous 48h.
@@ -236,7 +236,7 @@ export default function ContactPage() {
                       <Textarea
                         id="message"
                         name="message"
-                        placeholder="Décrivez en quelques lignes ce que vous cherchez à améliorer ou automatiser..."
+                        placeholder="Décrivez votre atelier en quelques mots — combien de personnes, ce qui vous prend le plus de temps, ce que vous aimeriez améliorer..."
                         className="min-h-[140px] resize-none bg-white"
                         required
                         disabled={status === 'loading'}

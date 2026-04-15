@@ -13,7 +13,7 @@ const founders = [
   {
     name: 'David Mvoula',
     role: 'Back / Archi / IA',
-    image: '/people/antoinemoulin.png',
+    image: '/people/davidmvoula.jpeg',
   },
 ];
 
@@ -58,9 +58,9 @@ export const AboutIntro = () => {
                 Zéro intermédiaire.
               </h2>
               <p className="max-w-md text-lg leading-relaxed text-[#99B9FF]/70">
-                Studio Cran, c&apos;est deux étudiants d&apos;EPITA convaincus
-                que les PME méritent des outils aussi bons que ceux des startups
-                tech.
+                Studio Cran, c&apos;est deux développeurs qui construisent des
+                outils sur mesure pour les ateliers d&apos;enseigne et de
+                signalétique.
               </p>
             </div>
 
@@ -112,17 +112,19 @@ export const AboutIntro = () => {
         {/* Stack + CTA */}
         <div className="grid items-center gap-10 md:grid-cols-2">
           <div className="space-y-4">
-            <h3 className="font-display text-2xl font-semibold">Notre stack</h3>
+            <h3 className="font-display text-2xl font-semibold">
+              On connaît le métier d&apos;enseigniste
+            </h3>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Next.js, React, TypeScript, PostgreSQL, Supabase, API REST, IA
-              générative — on choisit les bons outils pour chaque projet, pas
-              l&apos;inverse.
+              Du devis technique à la pose, en passant par le BAT et
+              l&apos;atelier — on sait où l&apos;info se perd et où les heures
+              partent.
             </p>
           </div>
           <div className="flex md:justify-end">
             <Button size="lg" asChild>
               <Link href="/contact">
-                Discutons de votre projet
+                Discutons de votre atelier
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

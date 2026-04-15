@@ -14,7 +14,8 @@ const Footer = () => {
           <div className="max-w-sm space-y-4">
             <Logo />
             <p className="text-muted-foreground text-sm">
-              Logiciel sur mesure et automatisation IA pour les PME françaises.
+              Logiciel sur mesure pour les ateliers d&apos;enseigne et de
+              signalétique.
             </p>
           </div>
 

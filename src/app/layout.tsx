@@ -28,20 +28,20 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://studiocran.fr'),
   title: {
-    default: 'Studio Cran — Logiciel sur mesure et automatisation IA pour PME',
+    default: 'Studio Cran — Logiciel sur mesure pour enseignistes et ateliers de signalétique',
     template: '%s | Studio Cran',
   },
   description:
-    'Studio Cran conçoit des logiciels sur mesure pour les PME françaises. Connectés à vos outils, automatisés par l\'IA, pensés pour votre métier.',
+    'Studio Cran construit des outils sur mesure pour les ateliers d\'enseigne : devis technique, suivi BAT, ordres de fab, planning de pose, facturation. Du sur mesure, pas un logiciel générique.',
   keywords: [
+    'logiciel enseigniste',
+    'logiciel enseigne signalétique',
     'logiciel sur mesure',
-    'automatisation IA',
-    'PME',
-    'développement web',
-    'studio logiciel',
+    'outil atelier enseigne',
+    'devis enseigne',
+    'gestion atelier signalétique',
     'Île-de-France',
     'outil métier',
-    'intégration CRM',
   ],
   authors: [{ name: 'Studio Cran' }],
   creator: 'Studio Cran',
@@ -60,9 +60,9 @@ export const metadata: Metadata = {
     shortcut: [{ url: '/favicon/favicon.ico' }],
   },
   openGraph: {
-    title: 'Studio Cran — Logiciel sur mesure et automatisation IA pour PME',
+    title: 'Studio Cran — Logiciel sur mesure pour enseignistes et ateliers de signalétique',
     description:
-      'Studio Cran conçoit des logiciels sur mesure pour les PME françaises. Connectés à vos outils, automatisés par l\'IA, pensés pour votre métier.',
+      'Studio Cran construit des outils sur mesure pour les ateliers d\'enseigne : devis technique, suivi BAT, ordres de fab, planning de pose, facturation.',
     siteName: 'Studio Cran',
     locale: 'fr_FR',
     images: [
@@ -70,15 +70,15 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Studio Cran — Logiciel sur mesure et automatisation IA pour PME',
+        alt: 'Studio Cran — Logiciel sur mesure pour enseignistes',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Studio Cran — Logiciel sur mesure et automatisation IA pour PME',
+    title: 'Studio Cran — Logiciel sur mesure pour enseignistes et ateliers de signalétique',
     description:
-      'Studio Cran conçoit des logiciels sur mesure pour les PME françaises. Connectés à vos outils, automatisés par l\'IA, pensés pour votre métier.',
+      'Studio Cran construit des outils sur mesure pour les ateliers d\'enseigne : devis technique, suivi BAT, ordres de fab, planning de pose, facturation.',
     images: ['/og-image.jpg'],
   },
 };
