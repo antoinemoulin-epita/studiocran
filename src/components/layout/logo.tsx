@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 
 const Logo = ({ className }: { className?: string }) => {
   return (
-    <Link href="/" className={cn('flex items-center justify-center', className)}>
+    <Link href="/" className={cn('flex items-center', className)}>
       <Image
         src="/studiocran-logo-blue.png"
         alt="Studio Cran"
